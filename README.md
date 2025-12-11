@@ -32,7 +32,7 @@ cd weblog && ls
 ```
 以下のようにディレクトリ・ファイルが表示されていればクローンは正常に行えています。
 ```
-docker  docker-compose.yml  src
+README.md  docker  docker-compose.yml  src
 ```
 
 #### ▸docker
