@@ -25,7 +25,7 @@ class HomeController extends Controller
             $_SESSION['message'] = [];
         }
 
-        $params['articles'] = $this->service->getAllArticles();
+        $params['articles'] = $this->service->getPublicArticles();
 
         $content = $this->render('index', $params);
         return Response::html(200, $content);

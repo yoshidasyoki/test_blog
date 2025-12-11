@@ -17,9 +17,9 @@ class HomeService
         $this->articleModel = $this->databaseManager->getModel('ArticleModel');
     }
 
-    public function getAllArticles()
+    public function getPublicArticles()
     {
-        $articles = $this->articleModel->findAllArticles();
+        $articles = $this->articleModel->findPublicArticles();
         return array_map(function($article) {
             $article['updated_at'] = $this->timeHelper->convertTimeJst($article['updated_at']);
             $article['created_at'] = $this->timeHelper->convertTimeJst($article['created_at']);

@@ -7,13 +7,14 @@ use \PDO;
 
 class ArticleModel extends DatabaseModel
 {
-    public function findAllArticles()
+    public function findPublicArticles()
     {
         $sql = <<<EOT
             SELECT article_id, username, title, sentence, articles.created_at, articles.updated_at
             From articles
             INNER JOIN users
                 ON articles.user_id = users.user_id
+            WHERE is_public = 1
             ORDER BY articles.updated_at DESC;
         EOT;
 
